@@ -171,8 +171,7 @@ button:hover {
     }
     .card {
         grid-template-columns:  1fr 1fr;
-        max-width: 650px;
-        /* max-height: 600px; why is this not working? */
+        max-width: 700px;
     }
     .mobile {
         display: none;
@@ -185,7 +184,7 @@ button:hover {
     }
     .contentContainer{
         border-radius: 0 10px 10px 0;
-        padding: 2.5rem;
+        padding: 3rem;
     }
 
     .contentContainer > p, .contentContainer h1, .flex {
