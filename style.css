@@ -1,0 +1,198 @@
+:root {
+    --clr-primary-400: hsl(158, 36%, 37%);
+    --clr-secondary-200: hsl(30, 38%, 92%);
+
+    --clr-neutral-900: hsl(212, 21%, 14%);
+    --clr-neutral-400: hsl(228, 12%, 48%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+
+    --ff-accent: 'Fraunces', serif;
+    --ff-base: 'Montserrat', serif;
+
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body{
+    color: var(--clr-neutral-400);
+    background-color: var(--clr-secondary-200);
+    font-size: 0.875rem;
+    font-family: var(--ff-base);
+    font-weight: var(--fw-regular);
+}
+
+.card{
+    min-height: 100vh;
+    margin: 1rem;
+    max-height: 90vh;
+    display: grid;
+    place-content: center;
+}
+
+.imgContainer{
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.contentContainer{
+    border-radius: 0 0 10px 10px;
+    background-color: white;
+    padding: 1.5rem;
+}
+
+.contentContainer p {
+    line-height: 1.4rem;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+}
+
+.perfume {
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    font-weight: 500;
+}
+
+img {
+    display: block; 
+    max-width: 100%; 
+  }
+
+h1 {
+    color: var(--clr-neutral-900);
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    padding: .5rem 0 .5rem 0;
+    line-height: 1;
+  }
+
+.salePrice {
+    color: var(--clr-primary-400);
+    font-family: var(--ff-accent);
+    font-weight: var(--fw-bold);
+    font-size: 2rem;
+}
+
+.retailPrice {
+    font-size: .8rem;
+    text-decoration: line-through;
+    padding-left: 1rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.button{
+    color: var(--clr-neutral-100);
+    font: inherit;
+    /* padding: .8rem 6.2rem .8rem 6.2rem; */
+    background-color: var(--clr-primary-400);
+    border-radius: 10px;
+    border: none;
+}
+
+.button img {
+    display: inline-block;
+    margin-right: .5rem;
+}
+
+button:hover {
+    background-color: hsl(158, 36%, 15%);
+    cursor: pointer;
+}
+
+.buttonContainer {
+    display: grid;
+    padding-top: 1rem;
+    min-height: 4rem;
+}
+
+.buttonContent {
+    display: flex;
+    justify-content: center;
+}
+
+.desktop {
+    display: none;
+}
+
+
+/* data icon did not work for some reason? */
+
+/* .button[data-icon="cart"]::before {
+    content: "";
+    width: 15px;
+    height: 16px;
+    background: red;
+} */
+
+
+
+.attribution {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 1.5rem;
+    padding-top: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 11px; text-align: center;
+    display: none;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+
+}
+
+
+
+@media (min-width: 700px) {
+    main {
+        display: grid;
+        place-content: center;
+    }
+    .card {
+        grid-template-columns:  1fr 1fr;
+        max-width: 650px;
+        /* max-height: 600px; why is this not working? */
+    }
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+    }
+    .imgContainer{
+        border-radius: 10px 0 0 10px;
+    }
+    .contentContainer{
+        border-radius: 0 10px 10px 0;
+        padding: 2.5rem;
+    }
+
+    .contentContainer > p, .contentContainer h1, .flex {
+        padding: 1rem 0 1rem 0; 
+    }
+
+    .contentContainer h1 {
+        font-size: 2.2rem;
+    }
+}
